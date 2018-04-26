@@ -34,7 +34,7 @@ class StatefulComponent extends React.Component<Props & DispatchProps, State> {
 }
 
 const mapStateToProps = (state: StateType, props: Props) => {
-    return {prop: state.prop};
+    return {prop: 'asd'};
 };
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>

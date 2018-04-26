@@ -1,5 +1,6 @@
 enum ActionTypes {
-    DEFAULT = 'DEFAULT'
+    DEFAULT = 'DEFAULT',
+    PUBLICATIONS_FETCHED = 'PUBLICATIONS_FETCHED'
 }
 
 export default ActionTypes;

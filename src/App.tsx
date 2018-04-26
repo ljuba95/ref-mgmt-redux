@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import { Container, Menu } from 'semantic-ui-react';
-import { StatelessComponent } from './components/StatelessComponent';
+import { default as PublicationsPage } from './components/PublicationsPage';
 
 const Nav = props => (
     <NavLink
@@ -17,12 +17,12 @@ class App extends React.Component {
             <Container>
                 <Menu>
                     <Menu.Item
-                        name="Home"
+                        name="Publications"
                         as={Nav}
                         to="/"
                     />
                 </Menu>
-                <Route exact={true} path={'/'} component={StatelessComponent}/>
+                <Route exact={true} path={'/'} component={PublicationsPage}/>
 
             </Container>
         );
