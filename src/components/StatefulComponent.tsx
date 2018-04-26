@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import { connect, MapDispatchToProps } from 'react-redux';
 import StateType from '../types/StateType';
-import { bindActionCreators, Dispatch } from 'redux';
+import { Action, Dispatch } from 'redux';
 import { action, asyncThunkAction } from '../actions/actions';
 
 export interface Props {
@@ -9,7 +9,8 @@ export interface Props {
 }
 
 export interface DispatchProps {
-    action: any;
+    action: typeof action;
+    asyncThunkAction: () => Promise<Action>;
 }
 
 const initialState = {
@@ -32,17 +33,14 @@ class StatefulComponent extends React.Component<Props & DispatchProps, State> {
     }
 }
 
-const mapStateToProps: MapStateToProps<State, Props, StateType> = (state: StateType, props: Props) => {
+const mapStateToProps = (state: StateType, props: Props) => {
     return {prop: state.prop};
 };
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>
-    bindActionCreators(
-        {
-            action,
-            asyncThunkAction
-        },
-        dispatch
-    );
+    ({
+        action: () => dispatch(action()),
+        asyncThunkAction: () => dispatch(asyncThunkAction())
+    });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatefulComponent);
