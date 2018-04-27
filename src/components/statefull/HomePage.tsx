@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import StateType from '../types/StateType';
+import StateType from '../../types/StateType';
 import { Action, Dispatch } from 'redux';
-import { action, asyncThunkAction } from '../actions/Publications';
+import { action, asyncThunkAction } from '../../actions/Publications';
 
 export interface Props {
     prop: any;
@@ -19,7 +19,7 @@ const initialState = {
 
 export type State = typeof initialState;
 
-class StatefulComponent extends React.Component<Props & DispatchProps, State> {
+class HomePage extends React.Component<Props & DispatchProps, State> {
 
     state = initialState;
 
@@ -27,7 +27,7 @@ class StatefulComponent extends React.Component<Props & DispatchProps, State> {
 
         return (
             <div>
-                Stateful
+                Home Page
             </div>
         );
     }
@@ -43,4 +43,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: 
         asyncThunkAction: () => dispatch(asyncThunkAction())
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StatefulComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

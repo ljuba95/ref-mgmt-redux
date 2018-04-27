@@ -49,7 +49,7 @@ export const addPublication: ActionCreator<
 
 export const getPublications: ActionCreator<ThunkAction<void, StateType, void>> = () => {
     return (dispatch: Dispatch<StateType>) => {
-        fetchPublications().then(data => {
+       return fetchPublications().then(data => {
             dispatch(publicationsFetched(List<Publication>(data)));
         });
     };

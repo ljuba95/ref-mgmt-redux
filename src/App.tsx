@@ -1,30 +1,24 @@
 import * as React from 'react';
-import { Route, NavLink } from 'react-router-dom';
-import { Container, Menu } from 'semantic-ui-react';
-import { default as PublicationsPage } from './components/PublicationsPage';
-
-const Nav = props => (
-    <NavLink
-        exact
-        {...props}
-        activeClassName="active"
-    />
-);
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PublicationsPage  from './components/statefull/PublicationsPage';
+import HomePage  from './components/statefull/HomePage';
+import Page404 from './components/stateless/Page404';
+import NavMenu from './components/stateless/NavMenu';
 // Root component
 class App extends React.Component {
     render() {
         return (
-            <Container>
-                <Menu>
-                    <Menu.Item
-                        name="Publications"
-                        as={Nav}
-                        to="/"
-                    />
-                </Menu>
-                <Route exact={true} path={'/'} component={PublicationsPage}/>
+            <BrowserRouter>
 
-            </Container>
+                <div>
+                    <Route component = {NavMenu}></Route>
+                    <Switch>
+                        <Route exact={true} path={'/'} component={HomePage}/>
+                        <Route exact={true} path={'/publications'} component={PublicationsPage}/>
+                        <Route component = {Page404}></Route>
+                    </Switch>
+                </div>
+            </BrowserRouter>
         );
     }
 }

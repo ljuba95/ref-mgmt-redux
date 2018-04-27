@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import StateType from '../types/StateType';
-import { getPublications } from '../actions/actions';
+import StateType from '../../types/StateType';
+import { getPublications } from '../../actions/Publications';
 import { List } from 'immutable';
-import { Publication } from '../models/Publication';
+import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
-import { PublicationsList } from './PublicationsList';
+import { Container } from 'semantic-ui-react';
+import { PublicationsList } from '../stateless/PublicationsList';
 
 export interface Props {
     publications: List<Publication>;
@@ -32,9 +33,9 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
     render() {
 
         return (
-            <div>
+            <Container>
                 <PublicationsList publications={this.props.publications}/>
-            </div>
+            </Container>
         );
     }
 }
