@@ -46,12 +46,37 @@ const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
 const delayDefault: number = 500;
 
 export const fetchPublications = (delayMs: number = delayDefault) => {
-    return delay(delayMs).then(() =>  fakeDb.publications );
+    return delay(delayMs).then(() => fakeDb.publications);
+};
+
+export const fetchPublicationById = (id: string, delayMs: number = delayDefault) => {
+    return delay(delayMs).then(() => {
+        return fakeDb.publications.find(value => value.id === id);
+    });
 };
 
 export const addPublication = (publication: Publication, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
-              fakeDb.publications.push(publication);
-              return publication;
+        publication.id = v4();
+        fakeDb.publications.push(publication);
+        return publication;
+    });
+};
+
+export const deletePublication = (id: string, delayMs: number = delayDefault) => {
+    return delay(delayMs).then(() => {
+        fakeDb.publications = fakeDb.publications.filter((pub: Publication) => pub.id !== id );
+        return id;
+    });
+};
+
+export const updatePublication = (pub: Publication, delayMs: number = delayDefault) => {
+    return delay(delayMs).then(() => {
+        let index = fakeDb.publications.findIndex((publication: Publication) => publication.id === pub.id);
+        if (index >= 0) {
+            fakeDb.publications[index] = pub;
+        }
+        return fakeDb.publications[index];
+
     });
 };

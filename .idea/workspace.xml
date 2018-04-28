@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8a51668-5820-4fa8-a584-8616a93518f3" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/Publications.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Publications.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Publications.ts" afterPath="$PROJECT_DIR$/src/actions/Publications.ts" />
+      <change beforePath="$PROJECT_DIR$/src/backend/fakeApi.ts" afterPath="$PROJECT_DIR$/src/backend/fakeApi.ts" />
+      <change beforePath="$PROJECT_DIR$/src/models/Publication.ts" afterPath="$PROJECT_DIR$/src/models/Publication.ts" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/publications.ts" afterPath="$PROJECT_DIR$/src/reducers/publications.ts" />
+      <change beforePath="$PROJECT_DIR$/src/types/ActionTypes.ts" afterPath="$PROJECT_DIR$/src/types/ActionTypes.ts" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,15 +28,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
               <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+=======
+      <file leaf-file-name="publications.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/publications.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#74#0" expanded="true" />
+              </folding>
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="HomePage.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/statefull/HomePage.tsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -56,6 +78,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="17" column="2" lean-forward="true" selection-end-line="45" selection-end-column="79" />
+=======
+      <file leaf-file-name="Publications.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/actions/Publications.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -63,6 +92,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Publications.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/Publications.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,8 +131,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+=======
+      <file leaf-file-name="fakeApi.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/backend/fakeApi.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,14 +175,10 @@
         <option value="$PROJECT_DIR$/backend/fakeApi.ts" />
         <option value="$PROJECT_DIR$/src/types/StateType.ts" />
         <option value="$PROJECT_DIR$/src/reducers/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/types/ActionTypes.ts" />
         <option value="$PROJECT_DIR$/src/components/PublicationList.ts" />
         <option value="$PROJECT_DIR$/src/components/StatefulComponent.tsx" />
-        <option value="$PROJECT_DIR$/src/backend/fakeApi.ts" />
         <option value="$PROJECT_DIR$/src/components/PublicationList.tsx" />
-        <option value="$PROJECT_DIR$/src/reducers/publications.ts" />
         <option value="$PROJECT_DIR$/src/rootReducer.ts" />
-        <option value="$PROJECT_DIR$/src/models/Publication.ts" />
         <option value="$PROJECT_DIR$/src/components/PublicationsList.tsx" />
         <option value="$PROJECT_DIR$/src/components/PublicationsPage.tsx" />
         <option value="$PROJECT_DIR$/src/components/stateless/Menu.tsx" />
@@ -158,6 +191,11 @@
         <option value="$PROJECT_DIR$/src/components/stateless/PublicationsList.tsx" />
         <option value="$PROJECT_DIR$/src/actions/Publications.ts" />
         <option value="$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx" />
+        <option value="$PROJECT_DIR$/src/models/Publication.ts" />
+        <option value="$PROJECT_DIR$/src/types/ActionTypes.ts" />
+        <option value="$PROJECT_DIR$/src/backend/fakeApi.ts" />
+        <option value="$PROJECT_DIR$/src/reducers/publications.ts" />
+        <option value="$PROJECT_DIR$/src/actions/Publications.ts" />
       </list>
     </option>
   </component>
@@ -185,58 +223,79 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+      <pane id="Scope" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="statefull" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="publikacije" type="b2602c69:ProjectViewProjectNode" />
-              <item name="publikacije" type="462c0819:PsiDirectoryNode" />
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reference-mgmt-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reference-mgmt-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,6 +337,9 @@
   <component name="RunManager">
     <configuration name="asd" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:3000/" />
   </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -293,8 +355,14 @@
       <workItem from="1524763300525" duration="932000" />
       <workItem from="1524770992880" duration="6705000" />
       <workItem from="1524842721285" duration="803000" />
+<<<<<<< HEAD
       <workItem from="1524857614477" duration="13390000" />
       <workItem from="1524905440860" duration="3102000" />
+=======
+      <workItem from="1524857614477" duration="10738000" />
+      <workItem from="1524898401460" duration="278000" />
+      <workItem from="1524903377603" duration="5556000" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
     </task>
     <task id="LOCAL-00001" summary="async action dispatch props fix">
       <created>1524764141883</created>
@@ -307,12 +375,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="32503000" />
+=======
+    <option name="totallyTimeSpent" value="32583000" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-11" width="1853" height="1055" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19955324" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -356,6 +428,29 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32900432" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19955324" />
     </layout-to-restore>
+=======
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19945355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23868954" sideWeight="0.5018615" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28679654" sideWeight="0.4981385" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -377,12 +472,30 @@
     <breakpoint-manager>
       <option name="time" value="3" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/components/stateless/NavMenu.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/StatefulComponent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -402,30 +515,30 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/types/ActionTypes.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rootReducer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -433,7 +546,7 @@
     <entry file="file://$PROJECT_DIR$/src/actions/Publications.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
@@ -443,7 +556,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/StatelessComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -451,12 +564,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/StatefulComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -473,7 +591,12 @@
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
+<<<<<<< HEAD
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+=======
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
         </state>
       </provider>
     </entry>
@@ -487,9 +610,9 @@
     <entry file="file://$PROJECT_DIR$/src/rootReducer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -508,7 +631,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/StatelessComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -516,7 +639,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/StatefulComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -526,7 +649,12 @@
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
+<<<<<<< HEAD
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+=======
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
         </state>
       </provider>
     </entry>
@@ -540,9 +668,9 @@
     <entry file="file://$PROJECT_DIR$/src/rootReducer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,7 +678,7 @@
     <entry file="file://$PROJECT_DIR$/src/actions/Publications.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
@@ -560,7 +688,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/StatelessComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -577,7 +705,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -587,50 +715,16 @@
     <entry file="file://$PROJECT_DIR$/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/StateType.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rootReducer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/ActionTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/backend/fakeApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,44 +736,33 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/rootReducer.ts">
+=======
     <entry file="file://$PROJECT_DIR$/src/components/StatelessComponent.tsx">
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="84" lean-forward="true" selection-start-line="2" selection-end-line="6" selection-end-column="84" />
+          <caret line="6" column="84" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/stateless/Page404.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/backend/fakeApi.ts">
+=======
     <entry file="file://$PROJECT_DIR$/src/components/stateless/NavMenu.tsx">
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StatefulComponent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="2" lean-forward="true" selection-end-line="45" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/statefull/HomePage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="288">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -688,11 +771,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/stateless/PublicationsList.tsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="195">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+=======
+        <state relative-caret-position="378">
+          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/StateType.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/components/stateless/Page404.tsx">
+=======
+    <entry file="file://$PROJECT_DIR$/src/components/StatefulComponent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/statefull/HomePage.tsx">
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Publication.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="240">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/immutable/dist/immutable-nonambient.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="195">
+          <caret line="17" column="2" lean-forward="true" selection-end-line="45" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="480">
+          <caret line="198" column="4" lean-forward="false" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="405">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+=======
+        <state relative-caret-position="170">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/ActionTypes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="315">
           <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="108">
+          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
         </state>
       </provider>
     </entry>
@@ -712,13 +911,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/publications.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="105">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+=======
+        <state relative-caret-position="198">
+          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#74#0" expanded="true" />
+          </folding>
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+    <entry file="file://$PROJECT_DIR$/src/backend/fakeApi.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="159">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
         </state>
@@ -730,16 +938,27 @@
           <caret line="49" column="68" selection-start-line="49" selection-start-column="68" selection-end-line="49" selection-end-column="68" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
+=======
+        <state relative-caret-position="332">
+          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/statefull/PublicationsPage.tsx">
+    <entry file="file://$PROJECT_DIR$/src/actions/Publications.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="249">
           <caret line="44" column="2" lean-forward="true" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+=======
+        <state relative-caret-position="242">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+>>>>>>> 8db93bfb9fc538ef477dacdb3c13ce902bb40253
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
