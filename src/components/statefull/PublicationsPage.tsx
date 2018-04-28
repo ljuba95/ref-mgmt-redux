@@ -7,6 +7,7 @@ import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
 import { Container, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
 import  PublicationsList  from '../stateless/PublicationsList';
+import { NavLink } from 'react-router-dom';
 
 export interface Props {
     publications: List<Publication>;
@@ -21,7 +22,13 @@ const initialState = {
 };
 
 export type State = typeof initialState;
-
+const Nav = props => (
+    <NavLink
+        exact
+        {...props}
+        activeClassName="active"
+    />
+);
 const LoaderExampleLoader = () => (
     <Segment>
         <Dimmer active>
@@ -53,7 +60,7 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
                     <LoaderExampleLoader/>}
 
             </Container>
-            <Button  basic color="blue">Add New</Button>
+            <Button as={Nav} to={'/addPublication'} basic color="blue">Add New</Button>
             </div>
         );
     }

@@ -25,7 +25,7 @@ class PublicationsList extends React.Component<Props & DispatchProps, any> {
 
     onDeletePub(id: string) {
 
-        this.props.deletePublication(id).then(() => alert('Deletion Succesfull'));
+        this.props.deletePublication(id).then((pubId: string) => alert(`Deleted pub with id ${pubId}`));
     }
 render() {
     return <div>
@@ -40,15 +40,14 @@ render() {
                 </Card.Content>
                 <Card.Content extra>
                     <div className="ui two buttons">
-                        <Button as={Nav} to={`publications/edit/${pub.id}`} basic color="green">Edit</Button> />
+                        <Button as={Nav} to={`editPublication/${pub.id}`} basic color="green">Edit</Button> />
                         <Button basic color="red" onClick={() => this.onDeletePub(pub.id)}>Remove</Button>
                     </div>
                 </Card.Content>
             </Card>))}
         </Card.Group>
     </div>;
-
-}
+    }
 }
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>
