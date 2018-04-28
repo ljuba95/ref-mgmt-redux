@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export interface DispatchProps {
-    getPublications: () => void;
+    getPublications: () => Promise<any>;
 }
 
 const initialState = {
@@ -27,7 +27,7 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
     state = initialState;
 
     componentDidMount() {
-        this.props.getPublications();
+        this.props.getPublications().then(() => alert('test'));
     }
 
     render() {
@@ -46,7 +46,7 @@ const mapStateToProps = (state: StateType, ownProps: Props): Props => {
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>
     ({
-        getPublications: () => dispatch(getPublications())
+        getPublications: (): Promise<any> => dispatch(getPublications())
     });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublicationsPage);

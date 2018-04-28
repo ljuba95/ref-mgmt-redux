@@ -47,7 +47,7 @@ export const addPublication: ActionCreator<
             createPublication(publication).then(value => resolve(value));
         });
 
-export const getPublications: ActionCreator<ThunkAction<void, StateType, void>> = () => {
+export const getPublications: ActionCreator<ThunkAction<Promise<any>, StateType, Promise<any>>> = () => {
     return (dispatch: Dispatch<StateType>) => {
        return fetchPublications().then(data => {
             dispatch(publicationsFetched(List<Publication>(data)));
