@@ -1,4 +1,5 @@
 export class Publication {
+
     private _id: string;
     private _title: string;
     private _url: string;
