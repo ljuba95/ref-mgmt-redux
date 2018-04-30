@@ -2,6 +2,7 @@
   "name": "reference-mgmt-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ljuba95.gitlab.io/reference-mgmt-front",
   "dependencies": {
     "immutable": "^3.8.2",
     "react": "^16.2.0",
