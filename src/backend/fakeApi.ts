@@ -65,7 +65,7 @@ export const addPublication = (publication: Publication, delayMs: number = delay
 
 export const deletePublication = (id: string, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
-        fakeDb.publications = fakeDb.publications.filter((pub: Publication) => pub.id !== id );
+        fakeDb.publications = fakeDb.publications.filter((pub: Publication) => pub.id !== id);
         return id;
     });
 };

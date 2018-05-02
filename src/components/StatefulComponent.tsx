@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { connect, MapDispatchToProps } from 'react-redux';
-import StateType from '../types/StateType';
+import { connect } from 'react-redux';
+import StateType from '../models/ReduxStateType';
 import { Action, Dispatch } from 'redux';
 import { action, asyncThunkAction } from '../actions/Publications';
 
@@ -37,7 +37,7 @@ const mapStateToProps = (state: StateType, props: Props) => {
     return {prop: 'asd'};
 };
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>
+const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: Props) =>
     ({
         action: () => dispatch(action()),
         asyncThunkAction: () => dispatch(asyncThunkAction())

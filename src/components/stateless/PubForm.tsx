@@ -83,6 +83,7 @@ export default  class PubForm extends React.Component<GameFormProps & any, PubFo
 
             <Form.Input name={'pages'} type={'number'} label="pages" placeholder="Pages" value={this.state.pages}
                         onChange={this.handleChange}/>
+            <h1>todo: autori</h1>
             <Button primary={true}>Save</Button>
         </Form>
     );

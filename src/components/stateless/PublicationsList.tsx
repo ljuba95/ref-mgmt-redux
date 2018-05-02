@@ -4,9 +4,9 @@ import { Publication } from '../../models/Publication';
 import { Card, Button } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { connect, MapDispatchToProps } from 'react-redux';
-import StateType from '../../types/StateType';
 import { deletePublication } from '../../actions/Publications';
 import { Dispatch } from 'redux';
+import StateType from '../../models/ReduxStateType';
 
 export interface Props {
     publications: List<Publication>;

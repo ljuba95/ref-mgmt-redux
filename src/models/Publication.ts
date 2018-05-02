@@ -1,60 +1,64 @@
-export class Publication {
+import { List, Record } from 'immutable';
+import { Author } from './Author';
 
-    private _id: string;
-    private _title: string;
-    private _url: string;
-    private _pages: number;
-    private _year: number;
+export class Publication extends Record({ id: '', title: '', url: '', pages: 0, year: 0 , authors: List()}) {
 
-    constructor(id: string, title: string, url: string, pages: number, year: number) {
-        this._id = id;
-        this._title = title;
-        this._url = url;
-        this._pages = pages;
-        this._year = year;
+    constructor(id: string, title: string, url: string, pages: number, year: number, authors: List<Author>) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.url = url;
+        this.pages = pages;
+        this.year = year;
+        this.authors = authors;
     }
 
     get id(): string {
-        return this._id;
+        return this.get('id');
     }
 
     set id(value: string) {
-        this._id = value;
+        this.set('id', value);
     }
 
     get title(): string {
-        return this._title;
+        return this.get('title');
     }
 
     set title(value: string) {
-        this._title = value;
+        this.set('title', value);
     }
 
     get url(): string {
-        return this._url;
+        return this.get('url');
     }
 
     set url(value: string) {
-        this._url = value;
+        this.set('url', value);
     }
 
     get pages(): number {
-        return this._pages;
+        return this.get('pages');
     }
 
     set pages(value: number) {
-        this._pages = value;
+        this.set('pages', value);
     }
 
     get year(): number {
-        return this._year;
+        return this.get('year');
     }
 
     set year(value: number) {
-        this._year = value;
+        this.set('year', value);
     }
 
-    public string() {
-        return `${this.year} - ${this.title}: ${this.pages} pages`;
+    get authors(): List<Author> {
+        return this.get('authors');
     }
+
+    set authors(value: List<Author>) {
+        this.set('authors', value);
+    }
+
 }

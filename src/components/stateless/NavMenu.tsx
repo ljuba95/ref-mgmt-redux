@@ -25,14 +25,10 @@ const NavMenu: React.SFC<Props> = (props: Props): JSX.Element => (
                         to="/publications"
                     />
                     <Menu.Item
-                        name="Item 2 "
+                        name="Logout"
                         as={Nav}
-                        to="/item2"
-                    />
-                    <Menu.Item
-                        name="Item 3 "
-                        as={Nav}
-                        to="/item3"
+                        to="/logout"
+                        position={'right'}
                     />
                 </Menu>
     );
