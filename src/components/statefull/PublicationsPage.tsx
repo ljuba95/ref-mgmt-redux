@@ -73,7 +73,6 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
 // todo: treba da se stavi tip za state, kad saznamo koji
 
 const mapStateToProps = (state, ownProps: Props): Props => {
-    console.log(state);
     return {publications: state.get('publications').toList()};
 };
 

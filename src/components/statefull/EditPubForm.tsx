@@ -2,12 +2,13 @@ import * as React from 'react';
 import { Publication } from '../../models/Publication';
 import { connect } from 'react-redux';
 import StateType from '../../models/ReduxStateType';
-import { updatePublication } from '../../actions/Publications';
+import { getPublication, updatePublication } from '../../actions/Publications';
 import { Dispatch } from 'redux';
 import PubForm from '../stateless/PubForm';
 
 export interface DispatchProps {
     updatePublication: (publication: Publication) => Promise<any>;
+    getPublication: (id: string) => Promise<Publication>;
 }
 
 export interface Props {
@@ -19,7 +20,16 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
 
     onSubmit = (expense) => {
         return this.props.updatePublication(expense);
+    }
 
+    componentDidMount() {
+        if (this.props.match.params.id) {
+            this.props.getPublication(this.props.match.params.id);
+        }
+    }
+
+    componentWillReceiveProps(nextProps: Props) {
+        this.setState({...nextProps});
     }
 
     render() {
@@ -35,13 +45,14 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
     }
 }
 
-const mapStateToProps = (state: StateType, ownProps: Props): Props => {
+const mapStateToProps = (state, ownProps: Props): Props => {
     const id = ownProps.match.params.id;
-    return {publication: state.publications.find((pub: Publication) => pub.id === id)};
+    return {publication: state.get('publications').find((pub: Publication) => pub.id === id)};
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: any) => ({
-    updatePublication: (publication: Publication): Promise<any> => dispatch(updatePublication(publication))
+    updatePublication: (publication: Publication): Promise<any> => dispatch(updatePublication(publication)),
+    getPublication: (id: string): Promise<Publication> => dispatch(getPublication(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPubForm);

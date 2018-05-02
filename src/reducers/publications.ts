@@ -10,10 +10,7 @@ export default function publicationReducer(state: Publications = OrderedMap<stri
     switch (action.type) {
 
         case ActionTypes.PUBLICATIONS_FETCHED:
-            console.log(action.publications);
-            let pubs = OrderedMap<string, Publication>(action.publications.map((pub: Publication) => [pub.id, pub]));
-            console.log(pubs);
-            return pubs;
+            return OrderedMap<string, Publication>(action.publications.map((pub: Publication) => [pub.id, pub]));
 
         case ActionTypes.PUBLICATION_FETCHED:
             return state.set(action.publication.id, action.publication);
