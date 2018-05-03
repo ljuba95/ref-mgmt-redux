@@ -1,35 +1,25 @@
 import { Record } from 'immutable';
 
-export class Author extends Record({id: '', name: '', familyName: ''}) {
+export interface AuthorParams {
+    id: string;
+    name: string;
+    familyName: string;
+}
 
-    constructor(id: string, name: string, familyName: string) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.familyName = familyName;
+let defaultParams: AuthorParams = {id: '', name: '', familyName: ''};
+
+export class Author extends Record(defaultParams) {
+
+    constructor(params: AuthorParams) {
+        super(params);
     }
 
-    get id(): string {
-        return this.get('id');
+    get<T extends keyof AuthorParams>(value: T): AuthorParams[T] {
+        return super.get(value);
     }
 
-    set id(value: string) {
-        this.set('id', value);
+    set<T extends keyof AuthorParams>(id: T, value: any): Author {
+        return super.set(id, value) as Author;
     }
 
-    get name(): string {
-        return this.get('name');
-    }
-
-    set name(value: string) {
-        this.set('name', value);
-    }
-
-    get familyName(): string {
-        return this.get('familyName');
-    }
-
-    set familyName(value: string) {
-        this.set('familyName', value);
-    }
 }

@@ -1,7 +1,7 @@
 import { Dispatch } from 'react-redux';
 import { ThunkAction } from 'redux-thunk';
 import { Action, ActionCreator } from 'redux';
-import { Publication } from '../models/Publication';
+import { Publication, PublicationParams } from '../models/Publication';
 import {
     addPublication as createPublication, deletePublication as deletePub,
     fetchPublicationById, updatePublication as updatePub,
@@ -51,22 +51,22 @@ export const thunkAction: ActionCreator<ThunkAction<Action, void, void>> = () =>
     };
 };
 
-export const publicationsFetched: ActionCreator<Action> = (publications: List<Publication>) => ({
+export const publicationsFetched: ActionCreator<Action> = (publications: List<PublicationParams>) => ({
     type: ActionTypes.PUBLICATIONS_FETCHED,
     publications
 });
 
-export const publicationFetched: ActionCreator<Action> = (publication: Publication) => ({
+export const publicationFetched: ActionCreator<Action> = (publication: PublicationParams) => ({
     type: ActionTypes.PUBLICATION_FETCHED,
     publication
 });
 
-export const publicationCreated = (publication: Publication) => ({
+export const publicationCreated = (publication: PublicationParams) => ({
     type: ActionTypes.PUBLICATION_CREATED,
     publication
 });
 
-export const publicationUpdated = (publication: Publication) => ({
+export const publicationUpdated = (publication: PublicationParams) => ({
     type: ActionTypes.PUBLICATION_UPDATED,
     publication
 });
@@ -82,9 +82,9 @@ export const publicationDeleted = (id: string) => ({
  * @returns {(dispatch: Dispatch<ReduxStateType>) => Promise<Publication>}
  * resolvuje se u sacuvanu publikaciju sa generisanim id
  */
-export const savePublication: ActionCreator<ThunkAction<Promise<Publication>, void, void>> =
-    (publication: Publication) => (dispatch: Dispatch<void>) => {
-        return createPublication(publication).then((pub: Publication) => {
+export const savePublication: ActionCreator<ThunkAction<Promise<PublicationParams>, void, void>> =
+    (publication: PublicationParams) => (dispatch: Dispatch<void>) => {
+        return createPublication(publication).then((pub: PublicationParams) => {
             dispatch(publicationCreated(pub));
             return pub;
         });
@@ -100,15 +100,15 @@ export const getPublications: ActionCreator<ThunkAction<Promise<any>, void, void
 
 export const getPublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (id: string) => {
     return (dispatch: Dispatch<void>) => {
-        return fetchPublicationById(id).then((publication: Publication) => {
+        return fetchPublicationById(id).then((publication: PublicationParams) => {
             dispatch(publicationFetched(publication));
         });
     };
 };
 
-export const updatePublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (pub: Publication) => {
+export const updatePublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (pub: PublicationParams) => {
     return (dispatch: Dispatch<void>) => {
-        return updatePub(pub).then((data: Publication) => {
+        return updatePub(pub).then((data: PublicationParams) => {
             dispatch(publicationUpdated(data));
         });
     };

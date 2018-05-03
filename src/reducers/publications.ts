@@ -1,5 +1,5 @@
 import { OrderedMap } from 'immutable';
-import { Publication } from '../models/Publication';
+import { Publication, PublicationParams } from '../models/Publication';
 import { ActionType, ActionTypes } from '../actions/Publications';
 
 export type Publications = OrderedMap<string, Publication>;
@@ -10,7 +10,9 @@ export default function publicationReducer(state: Publications = OrderedMap<stri
     switch (action.type) {
 
         case ActionTypes.PUBLICATIONS_FETCHED:
-            return OrderedMap<string, Publication>(action.publications.map((pub: Publication) => [pub.id, pub]));
+            return OrderedMap<string, Publication>(action.publications.map((pub: PublicationParams) =>
+                [pub.id, new Publication(pub)]
+            ));
 
         case ActionTypes.PUBLICATION_FETCHED:
             return state.set(action.publication.id, action.publication);

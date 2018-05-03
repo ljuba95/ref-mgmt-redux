@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { connect, MapDispatchToProps } from 'react-redux';
+import { connect } from 'react-redux';
 import StateType from '../../models/ReduxStateType';
 import { getPublications } from '../../actions/Publications';
-import { List } from 'immutable';
+import { OrderedMap } from 'immutable';
 import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
 import { Container, Dimmer, Loader, Image, Segment, Button, Divider } from 'semantic-ui-react';
 import PublicationsList from '../stateless/PublicationsList';
 import { NavLink } from 'react-router-dom';
 
-export interface Props {
-    publications: List<Publication>;
+export interface StateProps {
+    publications: OrderedMap<string, Publication>;
 }
 
 export interface DispatchProps {
@@ -40,7 +40,7 @@ const LoaderExampleLoader = () => (
     </Segment>
 );
 
-class PublicationsPage extends React.Component<Props & DispatchProps, State> {
+class PublicationsPage extends React.Component<StateProps & DispatchProps, State> {
 
     state = initialState;
 
@@ -61,7 +61,7 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
 
                     <Button as={Nav} to={'/addPublication'} basic color="blue">Add New</Button>
                     <Divider ></Divider>
-                    {this.state.loaded ? <PublicationsList publications={this.props.publications}/> :
+                    {this.state.loaded ? <PublicationsList publications={{map: this.props.publications}}/> :
                         <LoaderExampleLoader/>}
 
                 </Container>
@@ -72,11 +72,11 @@ class PublicationsPage extends React.Component<Props & DispatchProps, State> {
 
 // todo: treba da se stavi tip za state, kad saznamo koji
 
-const mapStateToProps = (state, ownProps: Props): Props => {
-    return {publications: state.get('publications').toList()};
+const mapStateToProps = (state, ownProps: StateProps): StateProps => {
+    return {publications: state.get('publications')};
 };
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, Props> = (dispatch: Dispatch<StateType>, ownProps: Props) =>
+const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: StateProps) =>
     ({
         getPublications: (): Promise<any> => dispatch(getPublications())
     });

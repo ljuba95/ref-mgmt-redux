@@ -1,5 +1,5 @@
 import v4 from 'uuid/v4';
-import { Publication } from '../models/Publication';
+import { PublicationParams } from '../models/Publication';
 
 const fakeDb = {
     publications: [
@@ -38,7 +38,7 @@ const fakeDb = {
             pages: 30,
             year: 2017
         }
-    ] as Publication[]
+    ] as PublicationParams[]
 };
 
 const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
@@ -55,7 +55,7 @@ export const fetchPublicationById = (id: string, delayMs: number = delayDefault)
     });
 };
 
-export const addPublication = (publication: Publication, delayMs: number = delayDefault) => {
+export const addPublication = (publication: PublicationParams, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
         publication.id = v4();
         fakeDb.publications.push(publication);
@@ -65,14 +65,14 @@ export const addPublication = (publication: Publication, delayMs: number = delay
 
 export const deletePublication = (id: string, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
-        fakeDb.publications = fakeDb.publications.filter((pub: Publication) => pub.id !== id);
+        fakeDb.publications = fakeDb.publications.filter((pub: PublicationParams) => pub.id !== id);
         return id;
     });
 };
 
-export const updatePublication = (pub: Publication, delayMs: number = delayDefault) => {
+export const updatePublication = (pub: PublicationParams, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
-        let index = fakeDb.publications.findIndex((publication: Publication) => publication.id === pub.id);
+        let index = fakeDb.publications.findIndex((publication: PublicationParams) => publication.id === pub.id);
         if (index >= 0) {
             fakeDb.publications[index] = pub;
         }

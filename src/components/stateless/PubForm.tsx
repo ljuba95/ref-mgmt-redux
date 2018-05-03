@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Redirect } from 'react-router';
 import { Form, Button, Message } from 'semantic-ui-react';
-import { Publication } from '../../models/Publication';
 
 export interface GameFormProps {
     match: any;
@@ -59,7 +58,7 @@ export default  class PubForm extends React.Component<GameFormProps & any, PubFo
         if (isValid) {
             const {id, title, url , pages , year} = this.state;
             this.setState({loading: true});
-            this.props.onSubmit({id, title, url, pages, year} as Publication )
+            this.props.onSubmit({id, title, url, pages, year})
                 .then(() => { this.setState((prevState ) => ({ done: !prevState.done }));
                 } );
                 }

@@ -47,7 +47,7 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
 
 const mapStateToProps = (state, ownProps: Props): Props => {
     const id = ownProps.match.params.id;
-    return {publication: state.get('publications').find((pub: Publication) => pub.id === id)};
+    return {publication: state.get('publications').find((pub: Publication) => pub.get('id') === id)};
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: any) => ({
