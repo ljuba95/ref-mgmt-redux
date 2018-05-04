@@ -6,9 +6,10 @@ export interface PublicationParams {
     url: string;
     pages: number;
     year: number;
+    authors: string[]; // todo: promeniti tip u List<string>, gde transformisati DTO (akcija ili reducer)
 }
 
-let defaultParams: PublicationParams = { id: '', title: '', url: '', pages: 0, year: 0 };
+let defaultParams: PublicationParams = { id: '', title: '', url: '', pages: 0, year: 0, authors: [] };
 
 export class Publication extends Record(defaultParams) {
 

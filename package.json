@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://ljuba95.gitlab.io/reference-mgmt-front",
   "dependencies": {
+    "@types/faker": "^4.1.2",
+    "faker": "^4.1.0",
     "immutable": "^3.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

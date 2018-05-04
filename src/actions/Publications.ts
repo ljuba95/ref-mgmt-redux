@@ -9,7 +9,7 @@ import {
 } from '../backend/fakeApi';
 import { List } from 'immutable';
 
-export enum ActionTypes {
+export enum PublicationActionTypes {
     DEFAULT = 'DEFAULT',
     PUBLICATIONS_FETCHED = 'PUBLICATIONS_FETCHED',
     PUBLICATION_FETCHED = 'PUBLICATION_FETCHED',
@@ -21,14 +21,14 @@ export enum ActionTypes {
 
 // Treba da se dogovorimo oko izgleda akcije, moze da bude {type: ActionTypes, payload: any}
 
-export interface ActionType {
-    type: ActionTypes;
+export interface PublicationActionType {
+    type: PublicationActionTypes;
     [propName: string]: any;
 }
 
 export const action: ActionCreator<Action> = () => {
     return {
-        type: ActionTypes.DEFAULT,
+        type: PublicationActionTypes.DEFAULT,
     };
 };
 
@@ -37,7 +37,7 @@ export const asyncThunkAction: ActionCreator<ThunkAction<Promise<Action>, void, 
         return new Promise((resolve, reject) => {
             // ...
             return dispatch({
-                type: ActionTypes.DEFAULT
+                type: PublicationActionTypes.DEFAULT
             });
         });
     };
@@ -46,33 +46,33 @@ export const asyncThunkAction: ActionCreator<ThunkAction<Promise<Action>, void, 
 export const thunkAction: ActionCreator<ThunkAction<Action, void, void>> = () => {
     return (dispatch: Dispatch<void>): Action => {
         return dispatch({
-            type: ActionTypes.DEFAULT
+            type: PublicationActionTypes.DEFAULT
         });
     };
 };
 
 export const publicationsFetched: ActionCreator<Action> = (publications: List<PublicationParams>) => ({
-    type: ActionTypes.PUBLICATIONS_FETCHED,
+    type: PublicationActionTypes.PUBLICATIONS_FETCHED,
     publications
 });
 
 export const publicationFetched: ActionCreator<Action> = (publication: PublicationParams) => ({
-    type: ActionTypes.PUBLICATION_FETCHED,
+    type: PublicationActionTypes.PUBLICATION_FETCHED,
     publication
 });
 
 export const publicationCreated = (publication: PublicationParams) => ({
-    type: ActionTypes.PUBLICATION_CREATED,
+    type: PublicationActionTypes.PUBLICATION_CREATED,
     publication
 });
 
 export const publicationUpdated = (publication: PublicationParams) => ({
-    type: ActionTypes.PUBLICATION_UPDATED,
+    type: PublicationActionTypes.PUBLICATION_UPDATED,
     publication
 });
 
 export const publicationDeleted = (id: string) => ({
-    type: ActionTypes.PUBLICATION_DELETED,
+    type: PublicationActionTypes.PUBLICATION_DELETED,
     id
 });
 

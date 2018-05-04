@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Redirect } from 'react-router';
 import { Form, Button, Message } from 'semantic-ui-react';
+import { Publication } from '../../models/Publication';
 
-export interface GameFormProps {
-    match: any;
-
-    // [prop: string]: any;
+export interface PubFormProps {
+    publication: Publication;
 }
+
 type PubFormState = {
     id: string,
     title: string,
@@ -19,14 +19,14 @@ type PubFormState = {
 
 };
 
-export default  class PubForm extends React.Component<GameFormProps & any, PubFormState> {
+export default class PubForm extends React.Component<PubFormProps & any, PubFormState> {
 
     state = {
-        id: this.props.id || '',
-        title: this.props.title || '',
-        url: this.props.url || '',
-        pages: this.props.pages || 0,
-        year: this.props.year || 0,
+        id: this.props.publication && this.props.publication.get('id') || '',
+        title: this.props.publication && this.props.publication.get('title') || '',
+        url: this.props.publication && this.props.publication.get('url') || '',
+        pages: this.props.publication && this.props.publication.get('pages') || 0,
+        year: this.props.publication && this.props.publication.get('year') || 0,
         errors: [],
         loading: false,
         done: false

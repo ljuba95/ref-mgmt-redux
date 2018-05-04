@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import StateType from '../../models/ReduxStateType';
-import { getPublications } from '../../actions/Publications';
+import { deletePublication, getPublications } from '../../actions/Publications';
 import { OrderedMap } from 'immutable';
 import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
 import { Container, Dimmer, Loader, Image, Segment, Button, Divider } from 'semantic-ui-react';
-import PublicationsList from '../stateless/PublicationsList';
-import { NavLink } from 'react-router-dom';
+import PublicationsList from '../stateless/PublicationList';
+import { Link } from 'react-router-dom';
 
 export interface StateProps {
     publications: OrderedMap<string, Publication>;
@@ -15,6 +15,7 @@ export interface StateProps {
 
 export interface DispatchProps {
     getPublications: () => Promise<any>;
+    deletePublication: (id: string) => Promise<any>;
 }
 
 const initialState = {
@@ -23,13 +24,6 @@ const initialState = {
 
 export type State = typeof initialState;
 
-const Nav = props => (
-    <NavLink
-        exact
-        {...props}
-        activeClassName="active"
-    />
-);
 const LoaderExampleLoader = () => (
     <Segment>
         <Dimmer active>
@@ -59,10 +53,12 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
             <div>
                 <Container>
 
-                    <Button as={Nav} to={'/addPublication'} basic color="blue">Add New</Button>
+                    <Button as={Link} to={'/addPublication'} basic color="blue">Add New</Button>
                     <Divider ></Divider>
-                    {this.state.loaded ? <PublicationsList publications={{map: this.props.publications}}/> :
-                        <LoaderExampleLoader/>}
+                    {this.state.loaded ?
+                        <PublicationsList publications={{map: this.props.publications}}
+                                          deletePublication={this.props.deletePublication}
+                        /> : <LoaderExampleLoader/>}
 
                 </Container>
             </div>
@@ -78,7 +74,8 @@ const mapStateToProps = (state, ownProps: StateProps): StateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: StateProps) =>
     ({
-        getPublications: (): Promise<any> => dispatch(getPublications())
+        getPublications: (): Promise<any> => dispatch(getPublications()),
+        deletePublication: (id: string): Promise<any> => dispatch(deletePublication(id))
     });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublicationsPage);

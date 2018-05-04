@@ -28,17 +28,13 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
         }
     }
 
-    componentWillReceiveProps(nextProps: Props) {
-        this.setState({...nextProps});
-    }
-
     render() {
         return (
             <div>
                 <h1>Edit publication</h1>
                 <PubForm
                     onSubmit={this.onSubmit}
-                    {...this.props.publication}
+                    publication={this.props.publication}
                 />
             </div>
         );
@@ -47,7 +43,7 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
 
 const mapStateToProps = (state, ownProps: Props): Props => {
     const id = ownProps.match.params.id;
-    return {publication: state.get('publications').find((pub: Publication) => pub.get('id') === id)};
+    return {publication: state.get('publications').get(id)};
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: any) => ({
