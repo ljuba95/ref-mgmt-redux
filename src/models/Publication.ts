@@ -15,7 +15,6 @@ export class Publication extends Record(defaultParams) {
 
     constructor(params: PublicationParams) {
         super(params);
-
     }
 
     get<T extends keyof PublicationParams>(value: T): PublicationParams[T] {

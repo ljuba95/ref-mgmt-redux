@@ -4,7 +4,7 @@ import PublicationsPage from './components/statefull/PublicationsPage';
 import { HomePage } from './components/statefull/HomePage';
 import Page404 from './components/stateless/Page404';
 import NavMenu from './components/stateless/NavMenu';
-import AddPubForm from './components/stateless/AddPubForm';
+import AddPubForm from './components/statefull/AddPubForm';
 import EditPubForm from './components/statefull/EditPubForm';
 import { Container } from 'semantic-ui-react';
 

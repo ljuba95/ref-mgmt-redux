@@ -1,15 +1,16 @@
 import v4 from 'uuid/v4';
 import { AuthorParams } from '../models/Author';
 import * as faker from 'faker';
+import { PublicationParams } from '../models/Publication';
 
-interface PublicationParams {
-    id: string;
-    title: string;
-    url: string;
-    pages: number;
-    year: number;
-    authors: string[];
-}
+// interface PublicationParams {
+//     id: string;
+//     title: string;
+//     url: string;
+//     pages: number;
+//     year: number;
+//     authors: string[];
+// }
 
 const fakeDb = {
 
@@ -121,15 +122,5 @@ export const updateAuthor = (author: AuthorParams, delayMs: number = delayDefaul
         }
         return fakeDb.authors[index];
 
-    });
-};
-
-export const setAuthorsOfPublication = (pubId: string, authorIds: string[], delayMs: number = delayDefault) => {
-    return delay(delayMs).then(() => {
-        let index = fakeDb.publications.findIndex((pub: PublicationParams) => pub.id === pubId);
-        if (index >= 0) {
-            fakeDb.publications[index].authors = authorIds;
-        }
-        return fakeDb.publications[index];
     });
 };
