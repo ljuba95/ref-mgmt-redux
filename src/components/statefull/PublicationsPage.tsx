@@ -5,7 +5,7 @@ import { deletePublication, getPublications } from '../../actions/Publications';
 import { OrderedMap } from 'immutable';
 import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
-import { Container, Dimmer, Loader, Image, Segment, Button, Divider } from 'semantic-ui-react';
+import { Container, Dimmer, Loader, Image, Segment, Button, Divider, Input, Grid } from 'semantic-ui-react';
 import PublicationsList from '../stateless/PublicationList';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,8 @@ export interface DispatchProps {
 }
 
 const initialState = {
-    loaded: false
+    loaded: false,
+    displayedPublications: OrderedMap()
 };
 
 export type State = typeof initialState;
@@ -36,15 +37,32 @@ const LoaderExampleLoader = () => (
 
 class PublicationsPage extends React.Component<StateProps & DispatchProps, State> {
 
-    state = initialState;
+    state = {
+        loaded: false,
+        displayedPublications: this.props.publications
+    };
 
     componentDidMount() {
         if (this.props.publications.size === 0) {
-            this.props.getPublications().then(() => this.setState(() => ({loaded: true})));
+            this.props.getPublications().then(() => this.setState(() => ({
+                displayedPublications: this.props.publications,
+                loaded: true
+            })));
         } else {
             this.setState(() => ({loaded: true}));
         }
 
+    }
+
+    onQueryChange = (evt) => {
+        let newDisplayed = this.props.publications.filter(
+            (pub: Publication) => pub.get('title').toLowerCase().indexOf(evt.target.value.toLowerCase()) !== -1
+        );
+        console.log(newDisplayed);
+        console.log(evt.target.value);
+        this.setState({
+            displayedPublications: OrderedMap(newDisplayed)
+        });
     }
 
     render() {
@@ -52,11 +70,20 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
         return (
             <div>
                 <Container>
+                    <Grid>
+                        <Grid.Row>
+                            <Grid.Column floated={'left'} width={4}>
+                                <Button as={Link} to={'/addPublication'} basic color="blue">Add New</Button>
+                            </Grid.Column>
+                            <Grid.Column floated={'right'} width={4}>
+                                <Input icon={'search'} placeholder={'Search...'} onChange={this.onQueryChange}/>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
+                    <Divider></Divider>
 
-                    <Button as={Link} to={'/addPublication'} basic color="blue">Add New</Button>
-                    <Divider ></Divider>
                     {this.state.loaded ?
-                        <PublicationsList publications={{map: this.props.publications}}
+                        <PublicationsList publications={{map: this.state.displayedPublications}}
                                           deletePublication={this.props.deletePublication}
                         /> : <LoaderExampleLoader/>}
 
@@ -65,8 +92,6 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
         );
     }
 }
-
-// todo: treba da se stavi tip za state, kad saznamo koji
 
 const mapStateToProps = (state, ownProps: StateProps): StateProps => {
     return {publications: state.get('publications')};

@@ -1,16 +1,15 @@
 import v4 from 'uuid/v4';
 import { AuthorParams } from '../models/Author';
 import * as faker from 'faker';
-import { PublicationParams } from '../models/Publication';
 
-// interface PublicationParams {
-//     id: string;
-//     title: string;
-//     url: string;
-//     pages: number;
-//     year: number;
-//     authors: string[];
-// }
+export interface PublicationParams {
+    id: string;
+    title: string;
+    url: string;
+    pages: number;
+    year: number;
+    authors: string[];
+}
 
 const fakeDb = {
 

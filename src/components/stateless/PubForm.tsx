@@ -3,10 +3,12 @@ import { Redirect } from 'react-router';
 import { Form, Button, Message, Dropdown, Divider } from 'semantic-ui-react';
 import { Publication } from '../../models/Publication';
 import { Author } from '../../models/Author';
+import { List, Map } from 'immutable';
 
 export interface PubFormProps {
-    publication: Publication;
+    publication?: Publication;
     authors: Map<string, Author>;
+    onSubmit: (p: Publication) => Promise<Publication>;
 }
 
 type PubFormState = {
@@ -15,14 +17,14 @@ type PubFormState = {
     url: string,
     pages: number,
     year: number,
-    authors: Array<string>,
+    authors: List<string>,
     errors: Array<string>,
     loading: boolean,
     done: boolean
 
 };
 
-export default class PubForm extends React.Component<PubFormProps & any, PubFormState> {
+export default class PubForm extends React.Component<PubFormProps, PubFormState> {
 
     state: PubFormState = {
         id: this.props.publication && this.props.publication.get('id') || '',
@@ -30,7 +32,7 @@ export default class PubForm extends React.Component<PubFormProps & any, PubForm
         url: this.props.publication && this.props.publication.get('url') || '',
         pages: this.props.publication && this.props.publication.get('pages') || 0,
         year: this.props.publication && this.props.publication.get('year') || 0,
-        authors: this.props.publication && this.props.publication.get('authors') || [],
+        authors: this.props.publication && this.props.publication.get('authors') || List(),
         errors: [],
         loading: false,
         done: false
@@ -44,7 +46,7 @@ export default class PubForm extends React.Component<PubFormProps & any, PubForm
 
     handleDropdown = (e, v) => {
         this.setState({
-            authors: v.value
+            authors: List(v.value)
         });
     }
 
@@ -66,7 +68,7 @@ export default class PubForm extends React.Component<PubFormProps & any, PubForm
         if (isValid) {
             const {id, title, url, pages, year, authors} = this.state;
             this.setState({loading: true});
-            this.props.onSubmit({id, title, url, pages, year, authors})
+            this.props.onSubmit(new Publication({id, title, url, pages, year, authors}))
                 .then(() => {
                     this.setState((prevState) => ({done: !prevState.done}));
                 });
@@ -97,6 +99,7 @@ export default class PubForm extends React.Component<PubFormProps & any, PubForm
                               value: id,
                               text: author.get('name')
                           })).toArray()}
+                          value={this.state.authors.toArray()}
                 />
                 <Divider/>
                 <Button primary={true}>Save</Button>

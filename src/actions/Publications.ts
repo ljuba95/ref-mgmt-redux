@@ -1,13 +1,12 @@
 import { Dispatch } from 'react-redux';
 import { ThunkAction } from 'redux-thunk';
 import { Action, ActionCreator } from 'redux';
-import { Publication, PublicationParams } from '../models/Publication';
+import { Publication } from '../models/Publication';
 import {
     addPublication as createPublication, deletePublication as deletePub,
     fetchPublicationById, updatePublication as updatePub,
-    fetchPublications,
+    fetchPublications, PublicationParams as PublicationDTO
 } from '../backend/fakeApi';
-import { List } from 'immutable';
 
 export enum PublicationActionTypes {
     DEFAULT = 'DEFAULT',
@@ -51,22 +50,22 @@ export const thunkAction: ActionCreator<ThunkAction<Action, void, void>> = () =>
     };
 };
 
-export const publicationsFetched: ActionCreator<Action> = (publications: List<PublicationParams>) => ({
+export const publicationsFetched: ActionCreator<Action> = (publications: PublicationDTO[]) => ({
     type: PublicationActionTypes.PUBLICATIONS_FETCHED,
     publications
 });
 
-export const publicationFetched: ActionCreator<Action> = (publication: PublicationParams) => ({
+export const publicationFetched: ActionCreator<Action> = (publication: PublicationDTO) => ({
     type: PublicationActionTypes.PUBLICATION_FETCHED,
     publication
 });
 
-export const publicationCreated = (publication: PublicationParams) => ({
+export const publicationCreated = (publication: PublicationDTO) => ({
     type: PublicationActionTypes.PUBLICATION_CREATED,
     publication
 });
 
-export const publicationUpdated = (publication: PublicationParams) => ({
+export const publicationUpdated = (publication: PublicationDTO) => ({
     type: PublicationActionTypes.PUBLICATION_UPDATED,
     publication
 });
@@ -82,9 +81,16 @@ export const publicationDeleted = (id: string) => ({
  * @returns {(dispatch: Dispatch<ReduxStateType>) => Promise<Publication>}
  * resolvuje se u sacuvanu publikaciju sa generisanim id
  */
-export const savePublication: ActionCreator<ThunkAction<Promise<PublicationParams>, void, void>> =
-    (publication: PublicationParams) => (dispatch: Dispatch<void>) => {
-        return createPublication(publication).then((pub: PublicationParams) => {
+export const savePublication: ActionCreator<ThunkAction<Promise<PublicationDTO>, void, void>> =
+    (publication: Publication) => (dispatch: Dispatch<void>) => {
+        return createPublication({
+            id: publication.get('id'),
+            url: publication.get('url'),
+            title: publication.get('title'),
+            pages: publication.get('pages'),
+            year: publication.get('year'),
+            authors: publication.get('authors').toArray()
+        }).then((pub: PublicationDTO) => {
             dispatch(publicationCreated(pub));
             return pub;
         });
@@ -92,23 +98,30 @@ export const savePublication: ActionCreator<ThunkAction<Promise<PublicationParam
 
 export const getPublications: ActionCreator<ThunkAction<Promise<any>, void, void>> = () => {
     return (dispatch: Dispatch<void>) => {
-        return fetchPublications().then(data => {
-            dispatch(publicationsFetched(List<Publication>(data)));
+        return fetchPublications().then((data: PublicationDTO[]) => {
+            dispatch(publicationsFetched(data));
         });
     };
 };
 
 export const getPublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (id: string) => {
     return (dispatch: Dispatch<void>) => {
-        return fetchPublicationById(id).then((publication: PublicationParams) => {
+        return fetchPublicationById(id).then((publication: PublicationDTO) => {
             dispatch(publicationFetched(publication));
         });
     };
 };
 
-export const updatePublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (pub: PublicationParams) => {
+export const updatePublication: ActionCreator<ThunkAction<Promise<any>, void, void>> = (publication: Publication) => {
     return (dispatch: Dispatch<void>) => {
-        return updatePub(pub).then((data: PublicationParams) => {
+        return updatePub({
+            id: publication.get('id'),
+            url: publication.get('url'),
+            title: publication.get('title'),
+            pages: publication.get('pages'),
+            year: publication.get('year'),
+            authors: publication.get('authors').toArray()
+        }).then((data: PublicationDTO) => {
             dispatch(publicationUpdated(data));
         });
     };

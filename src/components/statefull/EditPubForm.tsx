@@ -5,14 +5,19 @@ import StateType from '../../models/ReduxStateType';
 import { getPublication, updatePublication } from '../../actions/Publications';
 import { Dispatch } from 'redux';
 import PubForm from '../stateless/PubForm';
+import { Author } from '../../models/Author';
+import { Map } from 'immutable';
+import { getAuthors } from '../../actions/Authors';
 
 export interface DispatchProps {
     updatePublication: (publication: Publication) => Promise<any>;
     getPublication: (id: string) => Promise<Publication>;
+    getAuthors: () => Promise<any>;
 }
 
 export interface Props {
     publication: Publication;
+    authors: Map<string, Author>;
     match?: any;
 }
 
@@ -25,6 +30,7 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
     componentDidMount() {
         if (this.props.match.params.id) {
             this.props.getPublication(this.props.match.params.id);
+            this.props.getAuthors();
         }
     }
 
@@ -35,6 +41,7 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
                 <PubForm
                     onSubmit={this.onSubmit}
                     publication={this.props.publication}
+                    authors={this.props.authors}
                 />
             </div>
         );
@@ -43,12 +50,16 @@ class EditPubForm extends React.Component<Props & DispatchProps, any> {
 
 const mapStateToProps = (state, ownProps: Props): Props => {
     const id = ownProps.match.params.id;
-    return {publication: state.get('publications').get(id)};
+    return {
+        publication: state.get('publications').get(id),
+        authors: state.get('authors')
+    };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: any) => ({
     updatePublication: (publication: Publication): Promise<any> => dispatch(updatePublication(publication)),
-    getPublication: (id: string): Promise<Publication> => dispatch(getPublication(id))
+    getPublication: (id: string): Promise<Publication> => dispatch(getPublication(id)),
+    getAuthors: (): Promise<any> => dispatch(getAuthors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPubForm);

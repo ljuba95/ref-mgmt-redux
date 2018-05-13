@@ -1,8 +1,10 @@
-import { OrderedMap } from 'immutable';
-import { Publication, PublicationParams } from '../models/Publication';
+import { List, OrderedMap } from 'immutable';
+import { Publication } from '../models/Publication';
 import { PublicationActionType, PublicationActionTypes } from '../actions/Publications';
 
 export type Publications = OrderedMap<string, Publication>;
+
+// reducer takodje konvertuje obicne objekte iz akcija u immutable js objekte
 
 export default function publicationReducer(state: Publications = OrderedMap<string, Publication>(),
                                            action: PublicationActionType = {
@@ -12,35 +14,35 @@ export default function publicationReducer(state: Publications = OrderedMap<stri
     switch (action.type) {
 
         case PublicationActionTypes.PUBLICATIONS_FETCHED:
-            return OrderedMap<string, Publication>(action.publications.map((pub: PublicationParams) =>
-                [pub.id, new Publication(pub)]
+            return OrderedMap<string, Publication>(action.publications.map(pub =>
+                [pub.id, new Publication({
+                    ...pub,
+                    authors: List(pub.authors)
+                })]
             ));
 
         case PublicationActionTypes.PUBLICATION_FETCHED:
-            return state.set(action.publication.id, new Publication(action.publication));
-        // const index = state.findIndex((pub: Publication) => pub.id === action.publication.id);
-        // if (index >= 0) {
-        //     return state.map((pub: Publication) => {
-        //         return pub.id === action.publication.id ? action.publication : pub;
-        //     }) as List<Publication>;
-        // } else {
-        //     return state.push(action.publication);
-        // }
+            return state.set(action.publication.id, new Publication({
+                ...action.publication,
+                authors: List(action.publication.authors)
+            }));
 
         case PublicationActionTypes.PUBLICATION_CREATED:
             return state.concat({
-                [action.publication.id]: new Publication(action.publication)
+                [action.publication.id]: new Publication({
+                    ...action.publication,
+                    authors: List(action.publication.authors)
+                })
             }) as OrderedMap<string, Publication>;
 
         case PublicationActionTypes.PUBLICATION_UPDATED:
-            return state.set(action.publication.id, new Publication(action.publication));
-        // return state.map((pub: Publication) => {
-        //    return pub.id === action.publication.id ? action.publication : pub;
-        // }) as List<Publication>;
+            return state.set(action.publication.id, new Publication({
+                ...action.publication,
+                authors: List(action.publication.authors)
+            }));
 
         case PublicationActionTypes.PUBLICATION_DELETED:
             return state.delete(action.id);
-        // return state.filter((pub: Publication) => pub.id !== action.id) as List<Publication>;
 
         default:
             return state;

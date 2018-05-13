@@ -17,15 +17,18 @@ export const PublicationList: React.SFC<Props> = (props: Props): JSX.Element => 
         props.deletePublication(id).then((pubId: string) => alert(`Deleted pub with id ${pubId}`));
     }
 
-    return (
-        <Card.Group>
+    const renderCards = () => {
+        return (<Card.Group centered>
+
             {props.publications.map.map((pub: Publication, id: string) => {
                 return (<Card key={id}>
                         <Card.Content>
                             <Card.Header>{pub.get('title')}</Card.Header>
                             <Card.Meta>{pub.get('url')}</Card.Meta>
-                            <Card.Description>{pub.get('title')} is published in {pub.get('year')} year
-                                and has {pub.get('pages')} pages.</Card.Description>
+                            <Card.Description>
+                                {pub.get('title')} is published in {pub.get('year')} year
+                                and has {pub.get('pages')} pages and {pub.get('authors').size} authors.
+                            </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
                             <div className="ui two buttons">
@@ -35,10 +38,12 @@ export const PublicationList: React.SFC<Props> = (props: Props): JSX.Element => 
                         </Card.Content>
                     </Card>
                 );
-            }).toArray()
-            }
-        </Card.Group>
-    );
+            }).toArray()}
+        </Card.Group>);
+    };
+
+    return props.publications.map.size === 0 ? <p>There are no publications.</p> : renderCards();
+
 };
 
 export default PublicationList;
