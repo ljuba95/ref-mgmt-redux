@@ -1,69 +1,69 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import StateType from '../../models/ReduxStateType';
-import { deletePublication, getPublications } from '../../actions/Publications';
-import { OrderedMap } from 'immutable';
-import { Publication } from '../../models/Publication';
+import { Map } from 'immutable';
 import { Dispatch } from 'redux';
 import { Container, Dimmer, Loader, Button, Divider, Input, Grid, Icon } from 'semantic-ui-react';
-import PublicationsList from '../stateless/PublicationList';
 import { Link } from 'react-router-dom';
+import { Author } from '../../models/Author';
+import { deleteAuthor, getAuthors } from '../../actions/Authors';
+import AuthorList from '../stateless/AuthorList';
+import { RouteComponentProps } from 'react-router';
 
 export interface StateProps {
-    publications: OrderedMap<string, Publication>;
+    authors: Map<string, Author>;
 }
 
 export interface DispatchProps {
     getAuthors: () => Promise<any>;
-    deletePublication: (id: string) => Promise<any>;
+    deleteAuthor: (id: string) => Promise<any>;
 }
 
 const initialState = {
     loaded: false,
-    displayedPublications: OrderedMap()
+    displayedAuthors: Map()
 };
 
 export type State = typeof initialState;
 
-const LoaderExampleLoader = () => (
-
+const MyLoader = () => (
         <Dimmer active inverted>
-            <Loader>Loading..</Loader>
+            <Loader>Loading...</Loader>
         </Dimmer>
-
 );
 
-class PublicationsPage extends React.Component<StateProps & DispatchProps, State> {
+class AuthorsPage extends React.Component<StateProps & DispatchProps & RouteComponentProps<void>, State> {
 
     state = {
         loaded: false,
-        displayedPublications: this.props.publications
+        displayedAuthors: this.props.authors
     };
 
     componentDidMount() {
-        if (this.props.publications.size === 0) {
+        if (this.props.authors.size === 0) {
             this.props.getAuthors().then(() => this.setState(() => ({
-                displayedPublications: this.props.publications,
+                displayedAuthors: this.props.authors,
                 loaded: true
             })));
         } else {
             this.setState(() => ({loaded: true}));
         }
-
     }
 
     componentWillReceiveProps(nextProps: any) {
         this.setState({
-            displayedPublications: nextProps.publications
+            displayedAuthors: nextProps.authors
         });
     }
 
     onQueryChange = (evt) => {
-        let newDisplayed = this.props.publications.filter(
-            (pub: Publication) => pub.get('title').toLowerCase().indexOf(evt.target.value.toLowerCase()) !== -1
+        let newDisplayed = this.props.authors.filter(
+            (author: Author) =>
+                (author.get('name').toLowerCase().indexOf(evt.target.value.toLowerCase()) !== -1) ||
+                (author.get('familyName').toLowerCase().indexOf(evt.target.value.toLowerCase()) !== -1)
         );
         this.setState({
-            displayedPublications: OrderedMap(newDisplayed)
+            displayedAuthors: Map(newDisplayed)
         });
     }
 
@@ -75,9 +75,9 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
                     <Grid>
                         <Grid.Row>
                             <Grid.Column floated={'left'} width={4}>
-                                <Button as={Link} to={'/addPublication'} icon
+                                <Button as={Link} to={'/addAuthor'} icon
                                         labelPosition={'left'} primary size={'medium'}>
-                                    <Icon name={'newspaper'}/> Add Publication
+                                    <Icon name={'user'}/> Add Author
                                 </Button>
                             </Grid.Column>
                             <Grid.Column floated={'right'} width={4}>
@@ -88,9 +88,9 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
                     <Divider></Divider>
 
                     {this.state.loaded ?
-                        <PublicationsList publications={{map: this.state.displayedPublications}}
-                                          deletePublication={this.props.deletePublication}
-                        /> : <LoaderExampleLoader/>}
+                        <AuthorList history={this.props.history} authors={{map: this.state.displayedAuthors}}
+                                          deleteAuthor={this.props.deleteAuthor}
+                        /> : <MyLoader/>}
 
                 </Container>
             </div>
@@ -99,13 +99,13 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
 }
 
 const mapStateToProps = (state, ownProps: StateProps): StateProps => {
-    return {publications: state.get('publications')};
+    return {authors: state.get('authors')};
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<StateType>, ownProps: StateProps) =>
     ({
-        getAuthors: (): Promise<any> => dispatch(getPublications()),
-        deletePublication: (id: string): Promise<any> => dispatch(deletePublication(id))
+        getAuthors: (): Promise<any> => dispatch(getAuthors()),
+        deleteAuthor: (id: string): Promise<any> => dispatch(deleteAuthor(id))
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PublicationsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthorsPage);

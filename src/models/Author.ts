@@ -4,9 +4,10 @@ export interface AuthorParams {
     id: string;
     name: string;
     familyName: string;
+    institution: string;
 }
 
-let defaultParams: AuthorParams = {id: '', name: '', familyName: ''};
+let defaultParams: AuthorParams = { id: '', name: '', familyName: '', institution: '' };
 
 export class Author extends Record(defaultParams) {
 

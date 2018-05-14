@@ -13,6 +13,11 @@ export default function authorReducer(state: Authors = Map<string, Author>(),
             return Map<string, Author>(action.authors.map((author: AuthorParams) =>
                 [author.id, new Author(author)]
             ));
+        case AuthorActionTypes.AUTHOR_CREATED:
+            return state.set(action.author.id, new Author(action.author));
+
+        case AuthorActionTypes.AUTHOR_DELETED:
+            return state.delete(action.id);
 
         default:
             return state;

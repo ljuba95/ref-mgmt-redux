@@ -22,6 +22,7 @@ export enum PublicationActionTypes {
 
 export interface PublicationActionType {
     type: PublicationActionTypes;
+
     [propName: string]: any;
 }
 

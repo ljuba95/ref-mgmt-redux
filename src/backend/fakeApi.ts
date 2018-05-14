@@ -28,7 +28,8 @@ const fakeDb = {
         {
             id: '1',
             name: 'Pera',
-            familyName: 'Peric'
+            familyName: 'Peric',
+            institution: 'FON'
         }
     ] as AuthorParams[]
 };
@@ -37,7 +38,8 @@ for (let i = 0; i < 30; i++) {
     fakeDb.authors.push({
         id: v4(),
         name: faker.name.firstName(),
-        familyName: faker.name.lastName()
+        familyName: faker.name.lastName(),
+        institution: faker.company.companyName()
     });
 }
 
