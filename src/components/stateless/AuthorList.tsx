@@ -39,7 +39,10 @@ export const AuthorList: React.SFC<Props> = (props: Props): JSX.Element => {
                             <Table.Cell>{author.get('familyName')} </Table.Cell>
                             <Table.Cell>{author.get('institution')}</Table.Cell>
                             <Table.Cell>
-                                <Button onClick={() => onDeleteAuthor(id)} color={'red'}>
+                                <Button onClick={(evt) => {
+                                    onDeleteAuthor(id);
+                                    evt.stopPropagation();
+                                }} color={'red'}>
                                     Delete
                                 </Button>
                             </Table.Cell>
