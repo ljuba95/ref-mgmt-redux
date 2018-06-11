@@ -5,7 +5,7 @@ import { deletePublication, getPublications } from '../../actions/Publications';
 import { OrderedMap } from 'immutable';
 import { Publication } from '../../models/Publication';
 import { Dispatch } from 'redux';
-import { Container, Dimmer, Loader, Button, Divider, Input, Grid, Icon } from 'semantic-ui-react';
+import { Container, Dimmer, Loader, Button, Divider, Input, Grid, Icon, Header } from 'semantic-ui-react';
 import PublicationsList from '../stateless/PublicationList';
 import { Link } from 'react-router-dom';
 
@@ -27,9 +27,9 @@ export type State = typeof initialState;
 
 const LoaderExampleLoader = () => (
 
-        <Dimmer active inverted>
-            <Loader>Loading..</Loader>
-        </Dimmer>
+    <Dimmer active inverted>
+        <Loader>Loading..</Loader>
+    </Dimmer>
 
 );
 
@@ -72,18 +72,19 @@ class PublicationsPage extends React.Component<StateProps & DispatchProps, State
         return (
             <div>
                 <Container>
-                    <Grid>
-                        <Grid.Row>
-                            <Grid.Column floated={'left'} width={4}>
-                                <Button as={Link} to={'/addPublication'} icon
-                                        labelPosition={'left'} primary size={'medium'}>
-                                    <Icon name={'newspaper'}/> Add Publication
-                                </Button>
-                            </Grid.Column>
-                            <Grid.Column floated={'right'} width={4}>
-                                <Input icon={'search'} placeholder={'Search...'} onChange={this.onQueryChange}/>
-                            </Grid.Column>
-                        </Grid.Row>
+                    <Header size={'huge'} textAlign={'center'}>
+                        Manage publications
+                    </Header>
+                    <Grid columns={'equal'}>
+                        <Grid.Column floated={'left'} computer={5} mobile={9}>
+                            <Button icon as={Link} to={'/addPublication'}
+                                    labelPosition={'left'} primary fluid>
+                                <Icon name={'newspaper'}/> Add Publication
+                            </Button>
+                        </Grid.Column>
+                        <Grid.Column floated={'right'} computer={5} mobile={7}>
+                            <Input icon={'search'} placeholder={'Search...'} onChange={this.onQueryChange} fluid/>
+                        </Grid.Column>
                     </Grid>
                     <Divider></Divider>
 

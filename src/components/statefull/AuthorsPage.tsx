@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import StateType from '../../models/ReduxStateType';
 import { Map } from 'immutable';
 import { Dispatch } from 'redux';
-import { Container, Dimmer, Loader, Button, Divider, Input, Grid, Icon } from 'semantic-ui-react';
+import { Container, Dimmer, Loader, Button, Divider, Input, Grid, Icon, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { Author } from '../../models/Author';
 import { deleteAuthor, getAuthors } from '../../actions/Authors';
@@ -72,18 +72,19 @@ class AuthorsPage extends React.Component<StateProps & DispatchProps & RouteComp
         return (
             <div>
                 <Container>
-                    <Grid>
-                        <Grid.Row>
-                            <Grid.Column floated={'left'} width={4}>
-                                <Button as={Link} to={'/addAuthor'} icon
-                                        labelPosition={'left'} primary size={'medium'}>
-                                    <Icon name={'user'}/> Add Author
-                                </Button>
-                            </Grid.Column>
-                            <Grid.Column floated={'right'} width={4}>
-                                <Input icon={'search'} placeholder={'Search...'} onChange={this.onQueryChange}/>
-                            </Grid.Column>
-                        </Grid.Row>
+                    <Header size={'huge'} textAlign={'center'}>
+                        Manage publications
+                    </Header>
+                    <Grid columns={'equal'}>
+                        <Grid.Column floated={'left'} computer={5} mobile={9}>
+                            <Button icon as={Link} to={'/addAuthor'}
+                                    labelPosition={'left'} primary fluid>
+                                <Icon name={'newspaper'}/> Add Publication
+                            </Button>
+                        </Grid.Column>
+                        <Grid.Column floated={'right'} computer={5} mobile={7}>
+                            <Input icon={'search'} placeholder={'Search...'} onChange={this.onQueryChange} fluid/>
+                        </Grid.Column>
                     </Grid>
                     <Divider></Divider>
 
