@@ -117,7 +117,7 @@ export const deleteAuthor = (id: string, delayMs: number = delayDefault) => {
 
 export const updateAuthor = (author: AuthorParams, delayMs: number = delayDefault) => {
     return delay(delayMs).then(() => {
-        let index = fakeDb.authors.findIndex((aut: AuthorParams) => aut.id === aut.id);
+        let index = fakeDb.authors.findIndex((aut: AuthorParams) => aut.id === author.id);
         if (index >= 0) {
             fakeDb.authors[index] = author;
         }
